@@ -3,6 +3,31 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [v0.1.32](https://github.com/Bejibun-Framework/bejibun-utils/compare/v0.1.30...v0.1.32) - 2026-09-28
+
+### 🩹 Fixes
+#### `ObjectBuilder.serialize()`
+Fixed a crash when serializing an object containing an array (e.g. an array of nested objects). The recursion passed `this.normalize` as an unbound callback to `Array.map()`, so inside the callback `this` was `undefined` and any nested object threw `TypeError: undefined is not an object (evaluating 'this.normalize')`. The callback is now a closure that keeps the builder bound.
+
+### 📖 Changes
+
+#### Tests
+Added regression coverage for arrays of objects in `object.test.ts`: recursion through nested arrays/objects, scalar coercion (`"3"` -> `3`, `"true"`/`"false"` -> boolean), empty string -> `null`, and preserved `null` values.
+
+### 📦 Dependencies
+
+- Bumped `eslint` (devDependency) from `^10.10.0` to `^10.11.0`
+- Bumped `prettier` (devDependency) from `^3.9.6` to `^3.9.9`
+- Bumped `tsc-alias` (devDependency) from `^1.9.4` to `^1.9.5`
+- Bumped `typescript-eslint` (devDependency) from `^8.70.0` to `^8.70.1`
+
+### ❤️Contributors
+- Havea Crenata ([@crenata](https://github.com/crenata))
+
+**Full Changelog**: https://github.com/Bejibun-Framework/bejibun-utils/blob/master/CHANGELOG.md
+
+---
+
 ## [v0.1.30](https://github.com/Bejibun-Framework/bejibun-utils/compare/v0.1.29...v0.1.30) - 2026-08-25
 
 ### 🩹 Fixes

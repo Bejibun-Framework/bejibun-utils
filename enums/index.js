@@ -1,1 +1,1 @@
-export { default as HttpMethodEnum } from "./HttpMethodEnum";
+export { default as HttpMethodEnum } from "./HttpMethodEnum.js";

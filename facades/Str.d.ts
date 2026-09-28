@@ -1,4 +1,4 @@
-import StrBuilder from "../builders/StrBuilder";
+import StrBuilder from "../builders/StrBuilder.js";
 /**
  * Static facade over StrBuilder for common string transformations.
  */

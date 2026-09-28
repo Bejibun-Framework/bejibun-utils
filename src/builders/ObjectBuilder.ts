@@ -139,7 +139,7 @@ export default class ObjectBuilder {
      * @returns {any} The normalized value.
      */
     private normalize(obj: any): any {
-        if (Array.isArray(obj)) return obj.map(this.normalize);
+        if (Array.isArray(obj)) return obj.map((item: any) => this.normalize(item));
 
         if (obj === null || obj === undefined) return null;
 

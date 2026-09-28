@@ -30,6 +30,42 @@ describe("Object.serialize", () => {
     it("preserves non-empty strings", () => {
         expect(ObjectFacade.serialize({name: "John"})).toEqual({name: "John"});
     });
+    it("recurses arrays of objects (regression: unbound this.normalize)", () => {
+        const result = ObjectFacade.serialize({
+            items: [
+                {id: 1, name: "book", qty: "3", meta: {note: "", ok: "true"}},
+                {id: 2, name: "pen", tags: ["a", "b", null]},
+            ],
+        });
+        expect(result).toEqual({
+            items: [
+                {id: 1, name: "book", qty: 3, meta: {note: null, ok: true}},
+                {id: 2, name: "pen", tags: ["a", "b", null]},
+            ],
+        });
+    });
+    it("recurses deeply and converts nested scalars", () => {
+        const result = ObjectFacade.serialize({
+            company: {
+                name: "  Acme  ",
+                founded: "1989",
+                active: "true",
+                empty_note: "",
+                tags: ["fr", 30, null],
+                branches: [{city: "Palu", code: "001", ok: "false"}],
+            },
+        });
+        expect(result).toEqual({
+            company: {
+                name: "Acme",
+                founded: 1989,
+                active: true,
+                empty_note: null,
+                tags: ["fr", 30, null],
+                branches: [{city: "Palu", code: "001", ok: false}],
+            },
+        });
+    });
 });
 
 describe("Object.only", () => {

@@ -1,4 +1,4 @@
-import type { EnumItem } from "../types/enum";
+import type { EnumItem } from "../types/enum.d.ts";
 /**
  * Fluent builder that provides lookup helpers over a single enum definition.
  */

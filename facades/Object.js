@@ -1,4 +1,4 @@
-import ObjectBuilder from "../builders/ObjectBuilder";
+import ObjectBuilder from "../builders/ObjectBuilder.js";
 /**
  * Static facade over ObjectBuilder for payload normalization and parsing.
  */

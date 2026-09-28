@@ -1,5 +1,5 @@
-import EnumException from "../exceptions/EnumException";
-import { isEmpty, isNotEmpty } from "../utils/utils";
+import EnumException from "../exceptions/EnumException.js";
+import { isEmpty, isNotEmpty } from "../utils/utils.js";
 /**
  * Fluent builder that provides lookup helpers over a single enum definition.
  */

@@ -1,4 +1,4 @@
-import { defineValue, isNotEmpty } from "../utils/utils";
+import { defineValue, isNotEmpty } from "../utils/utils.js";
 /**
  * Fluent builder for transforming string values.
  *

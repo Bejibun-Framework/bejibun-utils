@@ -1,4 +1,4 @@
-import ArrException from "../exceptions/ArrException";
+import ArrException from "../exceptions/ArrException.js";
 /**
  * Fluent builder for common array transformations.
  *

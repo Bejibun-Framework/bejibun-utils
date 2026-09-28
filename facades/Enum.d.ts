@@ -1,4 +1,4 @@
-import EnumBuilder from "../builders/EnumBuilder";
+import EnumBuilder from "../builders/EnumBuilder.js";
 /**
  * Static facade over EnumBuilder for common enum introspection helpers.
  */

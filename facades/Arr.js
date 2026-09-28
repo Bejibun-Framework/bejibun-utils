@@ -1,4 +1,4 @@
-import ArrBuilder from "../builders/ArrBuilder";
+import ArrBuilder from "../builders/ArrBuilder.js";
 /**
  * Static facade over ArrBuilder for common array transformations.
  */

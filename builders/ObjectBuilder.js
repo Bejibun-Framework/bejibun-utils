@@ -1,6 +1,6 @@
-import ObjectException from "../exceptions/ObjectException";
-import Luxon from "../facades/Luxon";
-import { isEmpty, isNotEmpty } from "../utils/utils";
+import ObjectException from "../exceptions/ObjectException.js";
+import Luxon from "../facades/Luxon.js";
+import { isEmpty, isNotEmpty } from "../utils/utils.js";
 /**
  * Fluent builder for normalizing raw data (FormData, plain values, Date/Luxon
  * instances) into a consistent, JSON-friendly structure.
@@ -121,7 +121,7 @@ export default class ObjectBuilder {
      */
     normalize(obj) {
         if (Array.isArray(obj))
-            return obj.map(this.normalize);
+            return obj.map((item) => this.normalize(item));
         if (obj === null || obj === undefined)
             return null;
         if (obj instanceof Luxon.DateTime)

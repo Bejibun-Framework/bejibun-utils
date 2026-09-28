@@ -1,5 +1,5 @@
 import Logger from "@bejibun/logger";
-import { defineValue } from "../utils/utils";
+import { defineValue } from "../utils/utils.js";
 export default class EnumException extends Error {
     /** Numeric HTTP-style error code attached to the exception. */
     code;

@@ -16,7 +16,7 @@
  *   - `@bejibun/utils/builders/EnumBuilder`
  *   - `@bejibun/utils/utils` (isEmpty, isNotEmpty, defineValue, ask, etc.)
  */
-export * from "./enums/index";
-export * from "./exceptions/index";
-export * from "./facades/index";
-export * from "./utils/utils";
+export * from "./enums/index.js";
+export * from "./exceptions/index.js";
+export * from "./facades/index.js";
+export * from "./utils/utils.js";
