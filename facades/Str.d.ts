@@ -48,16 +48,26 @@ export default class Str {
      *
      * @param {string} value - The string to convert.
      * @param {string} delimiter - The separator between words (defaults to "_").
+     * @param {boolean} combine - When true, returns the builder for chaining.
      * @returns {StrBuilder | string} The builder or snake_cased string.
      */
-    static toSnakeCase(value: string, delimiter?: string): StrBuilder | string;
+    static toSnakeCase(value: string, delimiter?: string, combine?: boolean): StrBuilder | string;
     /**
      * Converts the given string to camelCase.
      *
      * @param {string} value - The string to convert.
+     * @param {boolean} combine - When true, returns the builder for chaining.
      * @returns {StrBuilder | string} The builder or camelCased string.
      */
-    static toCamelCase(value: string): StrBuilder | string;
+    static toCamelCase(value: string, combine?: boolean): StrBuilder | string;
+    /**
+     * Converts the given word to its naive plural form.
+     *
+     * @param {string} value - The singular word.
+     * @param {boolean} combine - When true, returns the builder for chaining.
+     * @returns {StrBuilder | string} The builder or pluralized word.
+     */
+    static pluralize(value: string, combine?: boolean): StrBuilder | string;
     /**
      * Determines whether the string starts with any of the given needles.
      *

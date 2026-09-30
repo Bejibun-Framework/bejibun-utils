@@ -58,19 +58,31 @@ export default class Str {
      *
      * @param {string} value - The string to convert.
      * @param {string} delimiter - The separator between words (defaults to "_").
+     * @param {boolean} combine - When true, returns the builder for chaining.
      * @returns {StrBuilder | string} The builder or snake_cased string.
      */
-    static toSnakeCase(value, delimiter = "_") {
-        return new StrBuilder().setValue(value).toSnakeCase(delimiter);
+    static toSnakeCase(value, delimiter = "_", combine) {
+        return new StrBuilder().setValue(value).toSnakeCase(delimiter, combine);
     }
     /**
      * Converts the given string to camelCase.
      *
      * @param {string} value - The string to convert.
+     * @param {boolean} combine - When true, returns the builder for chaining.
      * @returns {StrBuilder | string} The builder or camelCased string.
      */
-    static toCamelCase(value) {
-        return new StrBuilder().setValue(value).toCamelCase();
+    static toCamelCase(value, combine) {
+        return new StrBuilder().setValue(value).toCamelCase(combine);
+    }
+    /**
+     * Converts the given word to its naive plural form.
+     *
+     * @param {string} value - The singular word.
+     * @param {boolean} combine - When true, returns the builder for chaining.
+     * @returns {StrBuilder | string} The builder or pluralized word.
+     */
+    static pluralize(value, combine) {
+        return new StrBuilder().setValue(value).pluralize(combine);
     }
     /**
      * Determines whether the string starts with any of the given needles.

@@ -19,12 +19,21 @@ describe("Str.toSnakeCase", () => {
     it("converts to snake_case", () => expect(Str.toSnakeCase("helloWorld")).toBe("hello_world"));
     it("handles PascalCase", () => expect(Str.toSnakeCase("HelloWorld")).toBe("hello_world"));
     it("handles acronyms", () => expect(Str.toSnakeCase("HTTPRequest")).toBe("http_request"));
+    it("chains when combine is set", () =>
+        expect(Str.toSnakeCase("PostComment", "_", true).pluralize()).toBe("post_comments"));
 });
 
 describe("Str.toCamelCase", () => {
     it("converts to camelCase", () => expect(Str.toCamelCase("hello_world")).toBe("helloWorld"));
     it("handles hyphenated", () => expect(Str.toCamelCase("hello-world")).toBe("helloWorld"));
     it("handles single word", () => expect(Str.toCamelCase("hello")).toBe("hello"));
+});
+
+describe("Str.pluralize", () => {
+    it("appends s to plain words", () => expect(Str.pluralize("Post")).toBe("Posts"));
+    it("appends es to s/x/z/ch/sh endings", () => expect(Str.pluralize("box")).toBe("boxes"));
+    it("turns consonant+y into ies", () => expect(Str.pluralize("city")).toBe("cities"));
+    it("turns fe into ves", () => expect(Str.pluralize("life")).toBe("lives"));
 });
 
 describe("Str.startsWith", () => {

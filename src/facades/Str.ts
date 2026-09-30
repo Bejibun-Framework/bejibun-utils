@@ -64,20 +64,37 @@ export default class Str {
      *
      * @param {string} value - The string to convert.
      * @param {string} delimiter - The separator between words (defaults to "_").
+     * @param {boolean} combine - When true, returns the builder for chaining.
      * @returns {StrBuilder | string} The builder or snake_cased string.
      */
-    public static toSnakeCase(value: string, delimiter: string = "_"): StrBuilder | string {
-        return new StrBuilder().setValue(value).toSnakeCase(delimiter);
+    public static toSnakeCase(
+        value: string,
+        delimiter: string = "_",
+        combine?: boolean
+    ): StrBuilder | string {
+        return new StrBuilder().setValue(value).toSnakeCase(delimiter, combine);
     }
 
     /**
      * Converts the given string to camelCase.
      *
      * @param {string} value - The string to convert.
+     * @param {boolean} combine - When true, returns the builder for chaining.
      * @returns {StrBuilder | string} The builder or camelCased string.
      */
-    public static toCamelCase(value: string): StrBuilder | string {
-        return new StrBuilder().setValue(value).toCamelCase();
+    public static toCamelCase(value: string, combine?: boolean): StrBuilder | string {
+        return new StrBuilder().setValue(value).toCamelCase(combine);
+    }
+
+    /**
+     * Converts the given word to its naive plural form.
+     *
+     * @param {string} value - The singular word.
+     * @param {boolean} combine - When true, returns the builder for chaining.
+     * @returns {StrBuilder | string} The builder or pluralized word.
+     */
+    public static pluralize(value: string, combine?: boolean): StrBuilder | string {
+        return new StrBuilder().setValue(value).pluralize(combine);
     }
 
     /**

@@ -66,12 +66,13 @@ The builder exposes:
 - `Str.startsWith(value, needles)` Check if string starts with any needle
 - `Str.endsWith(value, needles)` Check if string ends with any needle
 - `Str.contains(value, needles)` Check if string contains any needle
+- `Str.pluralize(value)` Convert a word to its naive plural form (`city` -> `cities`, `box` -> `boxes`)
 - `Str.random(size?)` Generate random alphanumeric string (default length 32)
 - `Str.ipToFileName(value)` Convert IP/address to filesystem-safe filename
 
 All `Str` methods accept an optional `combine` flag to return the builder for chaining:
 ```ts
-Str.toUpperCase("hello", true).toSnakeCase(); // "HELLO" → "hello"
+Str.toUpperCase("hello", true).toSnakeCase(); // "HELLO" -> "hello"
 ```
 
 #### Arr
@@ -82,7 +83,7 @@ Str.toUpperCase("hello", true).toSnakeCase(); // "HELLO" → "hello"
 - `Arr.pluck(array, key)` Extract a property from each element
 
 #### Object
-- `Object.serialize(value)` Normalize values (empty strings → null, numeric strings → numbers, etc.)
+- `Object.serialize(value)` Normalize values (empty strings -> null, numeric strings -> numbers, etc.)
 - `Object.parseFormData(formData, raw?)` Parse FormData into nested object. Pass `raw: true` to skip normalization.
 - `Object.only(object, keys)` Get only the specified keys
 - `Object.except(object, keys)` Get all keys except the specified ones

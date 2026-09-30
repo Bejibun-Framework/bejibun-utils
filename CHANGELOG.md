@@ -3,6 +3,26 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [v0.1.33](https://github.com/Bejibun-Framework/bejibun-utils/compare/v0.1.32...v0.1.33) - 2026-09-30
+
+### 🩹 Fixes
+
+### 📖 Changes
+#### `Str.pluralize()`
+Added a naive pluralizer to the `Str` facade and `StrBuilder`, inferring an English plural without inflection tables: `post` -> `posts`, `box` -> `boxes`, `city` -> `cities`, `life` -> `lives`. Follows the standard builder pattern (`combine` returns the builder for chaining, otherwise the pluralized string).
+
+### 📦 Dependencies
+
+- Bumped `@types/luxon` (devDependency) from `^3.7.5` to `^3.7.6`
+- Bumped `typescript-eslint` (devDependency) from `^8.70.1` to `^8.71.0`
+
+### ❤️Contributors
+- Havea Crenata ([@crenata](https://github.com/crenata))
+
+**Full Changelog**: https://github.com/Bejibun-Framework/bejibun-utils/blob/master/CHANGELOG.md
+
+---
+
 ## [v0.1.32](https://github.com/Bejibun-Framework/bejibun-utils/compare/v0.1.30...v0.1.32) - 2026-09-28
 
 ### 🩹 Fixes

@@ -128,6 +128,31 @@ export default class StrBuilder {
         return this.value;
     }
     /**
+     * Converts the given word to its naive plural form
+     * (e.g. `post` -> `posts`, `box` -> `boxes`, `city` -> `cities`)
+     * without inflection tables.
+     *
+     * @param {boolean} combine - When true, returns the builder for chaining.
+     * @returns {StrBuilder | string} The builder or the pluralized string.
+     */
+    pluralize(combine) {
+        if (/(s|x|z|ch|sh)$/i.test(this.value)) {
+            this.value = `${this.value}es`;
+        }
+        else if (/[^aeiou]y$/i.test(this.value)) {
+            this.value = `${this.value.slice(0, -1)}ies`;
+        }
+        else if (/fe$/i.test(this.value)) {
+            this.value = `${this.value.slice(0, -2)}ves`;
+        }
+        else {
+            this.value = `${this.value}s`;
+        }
+        if (isNotEmpty(combine))
+            return this;
+        return this.value;
+    }
+    /**
      * Determines whether the value starts with any of the given needles.
      *
      * @param {string | Array<string>} needles - A single prefix or a list of prefixes.

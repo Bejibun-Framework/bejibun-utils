@@ -71,6 +71,15 @@ export default class StrBuilder {
      */
     toCamelCase(combine?: boolean): StrBuilder | string;
     /**
+     * Converts the given word to its naive plural form
+     * (e.g. `post` -> `posts`, `box` -> `boxes`, `city` -> `cities`)
+     * without inflection tables.
+     *
+     * @param {boolean} combine - When true, returns the builder for chaining.
+     * @returns {StrBuilder | string} The builder or the pluralized string.
+     */
+    pluralize(combine?: boolean): StrBuilder | string;
+    /**
      * Determines whether the value starts with any of the given needles.
      *
      * @param {string | Array<string>} needles - A single prefix or a list of prefixes.

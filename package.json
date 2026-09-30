@@ -1,6 +1,6 @@
 {
     "name": "@bejibun/utils",
-    "version": "0.1.32",
+    "version": "0.1.33",
     "author": "Havea Crenata <havea.crenata@gmail.com>",
     "repository": {
         "type": "git",
@@ -11,14 +11,14 @@
     "devDependencies": {
         "@eslint/js": "^10.0.1",
         "@types/bun": "1.4.2",
-        "@types/luxon": "^3.7.5",
+        "@types/luxon": "^3.7.6",
         "eslint": "^10.11.0",
         "eslint-config-prettier": "^10.1.8",
         "globals": "^17.12.0",
         "prettier": "^3.9.9",
         "tsc-alias": "^1.9.5",
         "typescript": "^6.0.3",
-        "typescript-eslint": "^8.70.1"
+        "typescript-eslint": "^8.71.0"
     },
     "bugs": {
         "url": "https://github.com/Bejibun-Framework/bejibun-utils/issues"
